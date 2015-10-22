@@ -15,7 +15,7 @@ git clone https://github.com/pivotal-customer0/cf-hello-world-sample-apps
 
 cd cf-hello-world-sample-apps
 
-for d in php python node ruby ; do                                                                                                      $
+for d in php python node ruby static; do                                                                                                      $
 	(cd $d && cf push $d -m 256m)
 	if [ $? != 0 ]; then
 		>&2 echo "Failed to push $d to $CF_API"
