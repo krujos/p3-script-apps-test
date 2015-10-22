@@ -23,7 +23,7 @@ for d in php python node ruby ; do                                              
 	fi
 
 	curl $d.$CF_APPS_DOMAIN
- 	if [ $? != 0 ]; then
+ 	if [[ $? != 0 ]]; then
 		>&2 echo "Failed find $d at $d.$CF_APPS_DOMAIN"
 		exit 1
 	fi
