@@ -30,3 +30,5 @@ for d in php python node ruby ; do                                              
 done
 
 cf delete-org scripttests -f
+rm -rf cf-hello-world-sample-apps
+
