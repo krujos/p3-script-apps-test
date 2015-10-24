@@ -1,4 +1,4 @@
-#!env bash
+#!/bin/bash -x
 for v in $CF_API $CF_USERNAME $CF_PASSWORD $CF_APPS_DOMAIN; do 
 	if [[ -z $v ]] ; then
 		>&2 echo "$v must be set!"
