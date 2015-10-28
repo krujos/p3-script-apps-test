@@ -1,4 +1,13 @@
 #!/bin/bash -x
+
+if [[ -z ${ENV_NUM} ]] ; then
+    >&2 echo "ENV_NUM must be set!"
+fi
+
+git clone https://github.com/pivotal-customer0/p1-photon-setup-scripts
+source p1-photon-setup-scripts/env${ENV_NUM}.sh
+rm -rf p1-photon-setup-scripts
+
 for v in $CF_API $CF_USERNAME $CF_PASSWORD $CF_APPS_DOMAIN; do 
 	if [[ -z $v ]] ; then
 		>&2 echo "$v must be set!"
